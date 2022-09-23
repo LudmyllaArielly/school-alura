@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-class Section {
+public class Section {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
