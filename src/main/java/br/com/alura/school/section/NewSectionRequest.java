@@ -9,15 +9,17 @@ import javax.validation.constraints.Size;
 class NewSectionRequest {
 
     @Unique(entity = Section.class, field = "code")
+    @Size(max = 10)
     @NotBlank
     @JsonProperty
     private final String code;
 
-    @Size(min = 5)
+    @Size(min = 5, max = 30)
     @NotBlank
     @JsonProperty
     private final String title;
 
+    @Size(max = 20)
     @NotBlank
     @JsonProperty
     private final String author;
