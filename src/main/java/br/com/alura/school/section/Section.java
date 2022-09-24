@@ -1,12 +1,15 @@
 package br.com.alura.school.section;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import static javax.persistence.GenerationType.IDENTITY;
+
+@Entity
 public class Section {
 
     @Id
