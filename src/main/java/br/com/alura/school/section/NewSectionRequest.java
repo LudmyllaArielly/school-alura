@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-class NewSectionRequest {
+public class NewSectionRequest {
 
     @Unique(entity = Section.class, field = "code")
     @Size(max = 10)
