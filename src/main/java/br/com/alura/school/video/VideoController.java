@@ -44,7 +44,7 @@ public class VideoController {
         section.addVideo(newVideoRequest.toEntity());
         Section save = sectionRepository.save(section);
 
-        URI location = URI.create(format("/courses/%s", course.getCode()));
+        URI location = URI.create(format("/courses/%s/sections/%s",courseCode, sectionCode));
         return ResponseEntity.created(location).body(new VideoResponse(newVideoRequest.toEntity().getVideo()));
     }
 
