@@ -11,8 +11,8 @@ import java.time.LocalDate;
 
 public class NewEnrollmentRequest {
 
-    @Size(max = 30)
-    @NotBlank
+    @Size(max = 30, message = "{username.max.size}")
+    @NotBlank(message = "{username.not.blank}")
     @JsonProperty("username")
     private String username;
 

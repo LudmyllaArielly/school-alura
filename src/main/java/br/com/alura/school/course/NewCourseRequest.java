@@ -9,14 +9,14 @@ import javax.validation.constraints.Size;
 public class NewCourseRequest {
 
     @Unique(entity = Course.class, field = "code")
-    @Size(max=10)
-    @NotBlank
+    @Size(max=10, message = "{code.course.max.size}")
+    @NotBlank(message = "{code.course.not.blank}")
     @JsonProperty
     private final String code;
 
     @Unique(entity = Course.class, field = "name")
-    @Size(max=20)
-    @NotBlank
+    @Size(max=20, message = "{name.course.max.size}")
+    @NotBlank(message = "{name.course.not.blank}")
     @JsonProperty
     private final String name;
 

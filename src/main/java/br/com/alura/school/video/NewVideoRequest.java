@@ -8,8 +8,8 @@ import javax.validation.constraints.Size;
 
 public class NewVideoRequest {
 
-    @Size(max = 100)
-    @NotBlank
+    @Size(max = 100, message = "{video.max.size}")
+    @NotBlank(message = "{video.not.blank}")
     private final String video;
 
     @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
