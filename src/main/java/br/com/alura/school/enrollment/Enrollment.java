@@ -30,10 +30,10 @@ public class Enrollment {
     public Enrollment() {
     }
 
-    public Enrollment(User user, Course course, LocalDate enrollDate) {
-        this.user = user;
+    public Enrollment(Course course, LocalDate enrollDate, User user) {
         this.course = course;
         this.enrollDate = enrollDate;
+        this.user = user;
     }
 
     public User getUser() {
