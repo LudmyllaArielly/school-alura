@@ -1,6 +1,8 @@
 package br.com.alura.school.section;
 
 import br.com.alura.school.support.validation.Unique;
+import br.com.alura.school.user.User;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.constraints.NotBlank;
@@ -24,7 +26,8 @@ public class NewSectionRequest {
     @JsonProperty
     private final String author;
 
-    NewSectionRequest(String code, String title, String author) {
+    @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
+    NewSectionRequest(@JsonProperty("code") String code, @JsonProperty("title") String title, @JsonProperty("author") String author) {
         this.code = code;
         this.title = title;
         this.author = author;
@@ -42,7 +45,7 @@ public class NewSectionRequest {
         return author;
     }
 
-    Section toEntity() {
-        return new Section(code, title, author);
+    Section toEntity(User user) {
+        return new Section(code, title, user);
     }
 }

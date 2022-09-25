@@ -16,7 +16,7 @@ class SectionResponse {
     SectionResponse(Section section) {
         this.code = section.getCode();
         this.title = section.getTitle();
-        this.author = section.getAuthor();
+        this.author = section.getAuthor().getUsername();
     }
 
 }
