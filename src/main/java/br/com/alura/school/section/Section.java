@@ -1,5 +1,6 @@
 package br.com.alura.school.section;
 
+import br.com.alura.school.user.User;
 import br.com.alura.school.video.Video;
 
 import javax.persistence.*;
@@ -27,9 +28,9 @@ public class Section {
     @Column(nullable = false)
     private String title;
 
-    @NotBlank
-    @Column(nullable = false)
-    private String author;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User author;
 
     @ManyToMany(cascade=CascadeType.ALL)
     @JoinTable(name = "section_video",
@@ -41,7 +42,7 @@ public class Section {
     public Section() {
     }
 
-    public Section(String code, String title, String author) {
+    public Section(String code, String title, User author) {
         this.code = code;
         this.title = title;
         this.author = author;
@@ -55,7 +56,7 @@ public class Section {
         return title;
     }
 
-    public String getAuthor() {
+    public User getAuthor(){
         return author;
     }
 
